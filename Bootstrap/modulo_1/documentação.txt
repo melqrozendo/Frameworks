@@ -1,0 +1,29 @@
+Bootstrap
+https://getbootstrap.com/docs/5.3/getting-started/introduction/
+Customixe:
+1-Color
+###
+.primary
+.sencondary
+.success
+.danger
+.warning
+.info
+.light
+.dark
+
+layout:
+1-Breakpoints:
+
+2-Conteiner:
+classes para formatação de textos:
+.container-fixed (o texto abrange parte do body, dependendo do tamanho da tela)
+.container-fluid (o texto abrange todo o body, nao inporta o tamanho da tela)
+###
+.container-sm(small)
+.container-md(medium)
+.containe-lg(large)
+.container-xl(extra-large)
+.container-xxl()
+
+3-grid

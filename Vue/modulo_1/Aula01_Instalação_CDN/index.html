@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Vue 3</title>
+    <!--Chamada pelo CDN do VUEJS-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!--chamando o meu script e utilizando 'defer' para ser carregado apos o document-->
+    <script src="src/app.js" defer></script>
+</head>
+<body>
+    <!--O Vue precisa ser iniciado por algum elemento da pagina-->
+    <!--Elemento principal-->
+    <div id="app">
+        <h2>Dados pessoais & da Família:</h2>
+        <!--chamar tag para imprimir o dados exportados do app aqui-->
+        <!--uso de sintaxe especial do vue para redenrizar dados no template-->
+        <p>O meu nome é: {{ name }} e tenho {{ age }} anos de idade.</p>
+    </div>
+    <div id="app1">
+        <p>O nome da minha mãe é: {{ nameMon }} e ela tem {{ ageMon }} anos de idade.</p>
+    </div>
+    <div id="app2">
+        <p>O nome do meu pai é: {{ nameDad }} e ele tem {{ ageDad }} anos de idade.</p>
+    </div>
+    <div id="app3">
+        <p>O nome da minha irmã é: {{ nameSister }} e ela tem {{ ageSister }} anos de idade.</p>
+    </div>
+    
+</body>
+</html>

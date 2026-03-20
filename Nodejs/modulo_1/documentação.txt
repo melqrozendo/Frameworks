@@ -1,0 +1,284 @@
+Nodejs
+é um simples interpretador da linguagem javascript
+com bases:
+V8
+parte que entende o js
+libuv
+parte que possibilita o nodejs ser uma linguagem de backend
+
+-roda no lado servidor(backend)
+-fora do navegador
+
+Vantagens:
+-uso de pouca memoria RAM e melhor uso a CPU
+-uso da lingugem JS
+-possui um dos melhores ecossistemas de:
+*Bibliotecas
+*Módulos
+*Plug-ins
+
+Empresas que utiliza nodejs: 
+-Ebay, Netflix, Uber, PayPal
+
+#01 - Instalação do nodejs:
+-Baixar versão LTS + ide VScode
+
+#02 - Como o nodejs funciona:
+-Abrir cmd(comandos):
+cd (change direct)
+cd .. (retornar para diretorio pai)
+dir (diretorios da pasta)
+cls (limpar a tela do prompt)
+help (lista uma serie de comandos)
+
+#03 - criar um projeto de nodejs
+-crie uma pasta de projeto
+-e chame o codigo criando em js pelo prompt
+
+#04 - Módulos
+-sistema de módulos (dividir programas em varios arquivos).
+-todas as bibliotecas para serem utilizadas no node precisa utilizar a função require() para carregar no arquivo principal que é atribuido a um variavel
+
+*******************************************************
+
+#05 - Protocolo HTTP
+-iniciando a parte de desenvolvimento do backend
+-como fazer requisições e servir o servidor
+-desenvolver uma aplicação HTTP utilizando o nodejs
+
+
+Entendendo o protocolo HTTP: 
+(faz com que o clientSide se comunique com o serverSide)
+Cliente <<<>>> HTTP <<<<>>>> Servidor
+
+*******************************************************
+1-Crie uma pasta do proximo projeto nodejs
+2-Crie um arquivo app.js ou index.js
+3-E gerencie as dependencias
+
+COMO RODAR O PROJETO BAIXADO
+Instalar todas as depedencias indicadas pelo package.json
+### npm install
+
+Rodar o projeto usando o nodemon
+### nodemon app.js
+
+SEQUENCIA PARA CRIAR O PROJETO
+Criar o arquivo package
+### npm init
+
+Gerencia as requisições, rotas e URLs, entre outra funcionalidades
+### npm install express
+
+Rodar o projeto
+### node app.js
+
+Acessar o projeto no navegador
+### http://localhost:8080
+
+Instalar o módulo para reiniciar o servidor sempre que houver alterações no código fonte (g siginifica globalmente)
+Executar no prompt de comando somente quando nunca utilizou o Nodemon
+### npm install -g nodemon
+
+Instalar o Nodemon no projeto
+### npm install --save-dev nodemon
+
+Rodar o projeto com o Nodemon
+### nodemon app.js
+
+Módulo para enviar e-MAIL
+### npm install nodemailer
+
+
+*******************************************************
+
+#06 - Introdução ao Expressjs
+-uso de um framework (conjunto de bibliotecas) para utilizar o protocolo HTTP
+-substituindo o procedimento da etapa de #05.
+-usado para criar aplicações web
+-para usar o framework Expressjs precisamos utilizar o npm (repositorio de pacotes), conseguimos baixar o pacote do frameworks Expressjs atraves do npm:
+https://www.npmjs.com/
+
+Etapas:
+1-Verificar no terminnal ou cmd se tem npm instalado.
+comando:
+npm -v
+2-criar uma pasta de teste para instalar o pacote de express e outras dependencias.
+comando:
+dir
+cd <pasta_de_teste>
+npm install express --save
+
+**********
+framework <<minimalista>>:
+sao recursos muitos simples, mas tem um  workflow(fluxo de trabalho) muito grande.
+
+framework <<fullstack>>:
+são estruturas completas e prontas, como conexão com o banco de dados, etc.
+**********
+
+#######################################################
+
+#07 - Criando primeira aplicação com Expressjs
+Etapas:
+1-Crie um arq index.js
+2-precisamos carregar o modulo express no arq criado index.js
+3-declarar uma variavel que receba a função express
+4-criar um servidor com o metodo: 
+listen(<numero da porta>);
+5-temos que definir uma função de callback
+6-rodar o servidor no terminal, chamando o arq index.js
+comando:
+node index.js
+
+************
+Veja! ao rodar o servidor, na aplicação aparece um erro de: Cannot GET /
+-isso ocorre porque nossa aplicação nao tem rota definida
+-rota definida é: 'caminho' para sua aplicação
+-assim temos que criar uma rota com o metodo: get(); com uma função de callback
+************
+
+************
+Atenção!!!
+sempre que fizer uma alteração na aplicação, devemos parar o servidor no terminal com ctrl+c e rodar novamente
+************
+
+************
+Obs! o Express é um framework minimalista orientado a rotas (toda a aplicação que usa o express, vai utilizar a estrutura de rotas)
+Veja! detro de uma rota podemos fazer:
+-exibir uma mensagem
+-exibir arq HTML, etc
+************
+
+#08 - Criando Rotas dinamicas no Nodejs
+Etapas:
+1-crie uma nova rota com o metodo get() com uma função de callback
+2-e defina na rota 'parametros' na qual podem na rota da aplicação o usuario inserir nesses paramentros e por sua vez definirmos um envio de msg
+
+parametros da função de callback
+req: responsavel por receber dados de uma aplicação
+res:
+
+#09 - Sobre o Nodemon:
+(Automatiza o processo de reiniciar o servidor)
+para instalar o Nodemon
+Etapas:
+1-Abra o cmd
+2-digite o comando para instalar globalmente
+comando:
+npm install nodemon -g
+
+3-para subir o servidor, vamos utilizar no terminal o:
+comando:
+nodemon index.js
+
+obs: caso o comando nao execute, reabra o terminal
+
+
+#10 - Como renderizar arquivos html nas Rotas
+Etapas: 
+1-crie arquivos html
+2-defina as rotas
+3-defina o metodo: 
+res.sendFile(__dirname + "<arquivo.html>")
+
+obs: a codificação de renderização nao é pratica de mercado apenas para uso de didatica para compreensao do 'express'
+
+*************************
+Básico do express: trabalha em cima de Rotas
+Proxima etapa é configurar um banco de dados relacional:
+1-Configuração do MYSQL
+2-Desenvolver uma API (CRUD) com nodejs, express e Mysql
+*************************
+
+#11 - Configurando MySQL (Banco Relacional)
+(Sistema de gerenciamento de banco de dados)
+Etapas:
+1- Acesse: https://www.mysql.com/
+2- Baixar a versao gratuita do Mysql:
+Mysql community edition
+3- selecione no comunity edition
+Mysql community server
+
+4-apos baixar o Mysql, iniciar o processo de instalação na maquina.
+Setup Type: Server only (apenas baixa o mysqlserver)
+
+5-Verificar tipos de configuração Mysql 
+[Selecione a Development Machine]
+
+obs:
+***Development Machine
+(reservado para computadores que apenas vão rodar o Mysql, onde o mysql vai consumir 100% da cpu e memoria Ram)
+***Server Machine
+(reservado para hospedagem web, onde parte do sistema de hospedagem é para o DataBase e a outra parte para o resto da aplicação)
+Dedicated Machine
+
+6-Configure uma senha Root (acesso master)
+SENHA DO USUARIO ROOT: bootyg22
+
+*****************
+Mysql é uma ferramenta de linha de comando (CMD)
+Veja que no Windows: o mysql nao é linkado a linha de comando, assim precisamos configurar e linkar o executavel mysql no CMD
+Etapas:
+1-Diretorio C: (arquivos de programa)
+2-pasta (Mysql)
+3-pasta (mysqlserver) abir a pasta bin
+4-na pasta bin(esta todos os executaveis do programa)
+5-copie o path(caminho da pasta)
+6-abra a janela windows e vá em [meu computador]
+7-click com o botao direito do mouse e vai a propriedades
+8-click em [configuração avançadas do sistema]
+9-selecione a opção [variaveis do ambiente]
+10-vamos registrar uma nova variavel de ambiente do tipo path
+Obs: Path(responsavel por linkar executaveis ate a sua linha de comando (CMD))
+11-Vamos adicionar um path do diretorio do bin do programa mysql
+
+12-apos realizado o procedimento, voltamos ao CMD e digitamos o comando: mysql
+obs: vai retornar uma linha de erro, pois não logamos com nenhum usuario
+
+#####################################
+Outra maneira de acessar o mysql no windows é buscando o mysql command line (CMD dedicado do mysql no windows):
+Etapa ao abrir CMD dedicado:
+1-Adicionar SENHA do usuario ROOT
+
+#####################################
+Caso de ERRO!
+Temos que baixar o extensao(ou pacote) microsoft visual c++
+
+*****************
+
+#12 - MYSQL
+
+*****************
+
+COMO ENVIAR E-MAIL COM NODEJS USANDO O NODEMAILER
+https://www.youtube.com/watch?v=3avg7ouHQ2o
+
+Módulo para enviar e-MAIL
+### npm install nodemailer
+
+Import a dependencia nodemailer
+### const nodemailer = require ('nodemailer');
+
+Ir no site do nodemailer:
+1- Acessar SMTP transport e adicionar o Examplo:
+Single connection
+2- temos que adicionar as credencias do meu servidor
+
+Assim, podemos criar um servidor framework
+MAILTRAP (Teste, Send, Control)
+https://mailtrap.io/
+
+conta criada com o gmail do google:
+melq.rozendo22@gmail.com
+
+
+
+
+*****************
+
+
+
+
+
+

@@ -1,0 +1,151 @@
+Documentação Nodejs 2.0
+
+#01- Instalação do Nodejs 
+-Instalando (LTS)
+-verificando no CMD
+comando:
+node --version
+node
+.help
+.exit
+
+obs: nodejs é javascript do lado do servidor, criando um servidor em node para gerar Api (Application Programming Interface ou Interface de Programação de Aplicação).
+
+#02 - Criando um servidor simples em Nodejs
+-criar um objeto http, dando um require e esperar um response pra quem fez uma chamada, definindo qual a porta(gateway) o servidor vai esta funcionando
+-no site http.cat (protocolos e codigos/status de retorno) apos realizarmos uma require:
+https://http.cat/
+
+servidor(definir porta)
+listen(5500);
+
+no navegador:
+localhost:5500
+127.0.0.1:5500
+
+#03 - Criando rotas no Servidor Nodejs
+Rotas: podemos definir rotas/caminhos diferentes na Url, para realizar uma navegação pelos conteudos
+
+tipos de requisiçoes: (get, post, delete, update)
+
+#Criando rotas com paramentros de entrada na url:
+url.parse(); 
+[pega uma url string e retorna uma url objeto]
+url.parse(req.url, true).query;
+[pega a url e retorna uma query string]
+
+navegador: 127.0.0.1:3000/?nome=melq&profissao=programador
+
+#04 - Módulo fs(file system) para manipular arquivos em Nodejs
+-é um modulo que faz parte do nucleo do nodejs
+const fs = require('fs');
+-acesso aos metodos assincronos por padrão:
+https://nodejs.reativa.dev/0046-node-module-fs/index
+mais utilizados:
+fs.access()
+fs.appendFile()
+fs.rename()
+fs.writeFile()
+-os metodos do fs podem rodar de forma síncrona add Sync no nome (causa impacto no fluxo da sua aplicação):
+fs.renameSync()
+fs.writeSync()
+
+*********************************
+Exemplos de uso do metodo: fs.rename()
+
+# API assíncrona é usada com uma callback (função)
+sintaxe:
+const fs = require('fs')
+fs.rename('before.json', 'after.json', err => {
+  if (err) {
+    return console.error(err)
+  }
+  // feito
+})
+
+obs: callback é uma função, no codigo acima, esta escrita como um arrow_function que se a operação falhar deve retornar o erro;
+
+# API síncrona pode ser usada com um bloco de try/catch para tratar erros
+sintaxe: try/catch (tente/caso não)
+const fs = require('fs')
+try {
+  fs.renameSync('before.json', 'after.json')
+  // feito
+} catch (err) {
+  console.error(err)
+}
+
+obs: leitura do codigo, chamado o modulo fs, tente renomear de forma sincrona o arquivo 'before.json' para 'after.json', caso não, exiba o erro;
+
+*********************************
+
+#05 - Criando Rotas usando Expressjs
+-uso do express no nodejs é definir rotas
+comandos no terminal:
+npm install express -save
+
+#06 - Modularizando as rotas do App Nodejs
+Modularizar (dividir o codigos em modulos)
+
+1-criar um arquivo externo de rotas
+2-realizar a requisição do arquivo de rotas no arquivo principal da API
+3-Instalar o express e router:
+comandos no terminal:
+npm install express -save
+npm install router --save
+
+4-iniciamos a codar pelo arq. de rotas
+
+#07 - Node com Banco de dados Relacional: MySQl
+1-vamos entender como obter e trabalhar com dados na nossa API node
+2-uso do Mysql Workbench
+3-Instalar modulo do MySQl
+comandos no terminal:
+npm install mysql2 --save
+
+Obs: trabalhar com banco de dados no nodejs
+1-trabalhas com:
+
+[Gerenciamento de funçoes Assincronas]
+Promises, async e await (pois temos que aguarda o banco de dados quando realizarmos alguma requisição)
+Requisição:
+conexão, select, insert, delete, update
+
+Etapas de desenvolvimento:
+1- codificar a conexão com o banco no arq (db.js)
+definido:
+Nome: CursoNode
+senhaRoot: bootyg22
+
+comandos para connection do mysql workbench:
+
+create database cadastro;
+use cadastro;
+
+create table pessoas(
+nome varchar(30),
+idade tinyInt
+);
+
+use cadastro;
+insert into pessoas
+(nome, idade)
+values
+('Rozendo', '24');
+
+
+select * from pessoas;
+
+2- codificar no arq (index.js)
+
+
+#08 - Trabalhando com Eventos em Nodejs
+
+1-vamos subir um servidor
+2-vamos chamar o modulo events que já existe no nucleo do node
+3- definir e criar um objeto que recebe do modulo events a classe ou metodo EventEmitter();
+
+EventEmitter() 
+[realiza disparos de eventos quando o servidor esta ativado e para quando o servidor não esta ativado]
+
+Obs: o disparo de eventos so ocorre se o servidor subir e o navegador rodar;

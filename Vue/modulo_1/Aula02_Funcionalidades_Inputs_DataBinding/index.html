@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input e Data Binding no Vuejs</title>
+    <!--Chamada pelo CDN do VUEJS-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!--chamando o meu script e utilizando 'defer' para ser carregado apos o document-->
+    <script src="src/app.js" defer></script>
+</head>
+<body>
+    <!--O Vue precisa ser iniciado por algum elemento da pagina-->
+    <!--Elemento principal-->
+    <div id="app">
+        <!--definindo um input-->
+        <form id="app-form">
+            <!--v-model: mode do comunicar ao Vuejs que deve guarda esse dado do input em algum lugar dele-->
+            <input type="text" v-model="input_name" placeholder="Digite seu nome">
+            <!--v-on:click é um evento do Vuejs que chama o submitForm onde ele foi instanciado-->
+            <input type="submit" value="Enviar" v-on:click="submitForm">
+        </form>
+        <!--uso por meio de um EVENTO-->
+        <p>O meu nome por Evento: {{ name }}</p>
+        <!--uso por meio de um DATA BINDING (em tempo rea) por meio do v-model-->
+        <p>O meu nome por Data Binding: {{ input_name }}</p>
+    </div>
+
+    <div id="app1">
+        <form id="app-form1">
+            <input type="text" v-model="input_name1" placeholder="Digite seu nome">
+            <input type="number" v-model="input_age1">
+
+            <input type="submit" value="Enviar" v-on:click="submitForm1">
+        </form>
+        <!--Evento-->
+        <p>Nome: {{ name1 }} </p>
+        <p>Idade: {{ age1 }} </p>
+        <!--DataBinding-->
+        <p>Nome: {{ input_name1 }}</p>
+        <p>Idade: {{ input_age1}}</p>
+    </div>
+</body>
+</html>

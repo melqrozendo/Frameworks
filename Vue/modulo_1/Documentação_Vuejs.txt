@@ -1,0 +1,90 @@
+#01 - O que é Vue:
+-Um framework progressivo para criar interfaces
+-Tem a construção de layouts baseada em 'componentes'
+-A curva de aprendizado é 'baixa'
+-Está entre os frameworks front-end mais utilizados
+-Possui módulos para manipulação de rotas(Vue Router) e tambem state(Vuex);
+
+Pre-requisitos:
+-ter conhecimento em JS e seu recursos da versão ES6(map,filter, reduce e etc).
+
+#02 - Instalaçao do Vue
+
+1ª forma de instalação: CDN
+-Instalar o Vue em um projeto é simples, podemos utilizar 'via CDN';
+-Basta inserir o link de script
+
+2ª forma de instalação: CLI
+-Porem para ter acesso a todas as funcionalidades do Vue.js, é recomendado instalar pelo CLI;
+
+#03 - Input e databinding
+-umas das funcionalidades mais interessantes é o data binding(possibilita mudar em tempo real um dado, por meio do que é recebido de um input);
+Input(o usuario ao inserir algum dado na aplicação)
+-No Vuejs essa funcionalidade é mais facil ainda, pois digitamos algumas linhas e pronto;
+veja que!
+Input e verificar na aplicação por meio de um Evento ou por meio do Data Binding
+
+#04 - O CLI do Vuejs (gera uma estrutura)
+-o CLI é uma ferramenta de linha de comando do vue (digitar comandos no terminal e com isso ele vai enviar algumas respostas)
+
+******obs*******
+CLI (possibilita configurar a estrutura do ambiente Vue)
+NPM (não possibilita a configuração de ambiente Vue, pois ele instala todo conteudo)
+
+-possibilita criar e configurar projetos de forma mais avançadas. Ex: adicionar o Vue Router desde a instalção do projeto
+-isso flexibiliza muito as coisas, vamos então instalar o Vue CLI e testar
+
+Etapas do CLI
+1-Instalar nodejs e verificar version no cmd 
+comandos:
+node -v
+npm -v
+2-ir na documentação do Vue e copiar o npm de instalação
+3-instalar no terminal
+comando:
+> npm create vue@latest
+> cd <your-project-name>
+> npm install
+> npm run dev (sempre que for rodar a aplicação)
+
+#05 - Componentes (recurso essencial para o Vue)
+-é por meio de componentes que podemos dividir o nosso layout em partes
+-cada componentes tem a sua responsabilidade, por exemplo: um componente que é uma tabela e outro que é um rodapé
+-dividir as entidades desta maneira deixa o projeto com uma separação de responsabilidade maior
+-cada um tendo seu CSS e tambem os dados que manipulação
+
+para esta etapa de entender componentes:
+1- vamos em componentes e na pasta 'App.vue' deletar tudo
+2- para criar do zero, deletamos tbm o helloWordVue
+3-toda aplicação é baseada no 'App.vue'
+
+*****Extansiar no VScode o Vetur
+
+4-apos definir um template e exportar o conteudo do template e verificar na aplicação no navegador
+5-vamos criar um componente (recurso do vue)
+6-vamos na pasta components e criamos um arq 'firstComponents.vue'
+7-definimos um template (onde recebe html) e tambem exportamos o conteudo do arq 'firstComponents'
+
+8-em script do arq 'App.vue' nos vamos importar o conteudo de template do arq 'firstComponents' 
+9-porem para utilizar o conteudo do arq 'firstComponents' vamos adicionar a uma proriedade dentro do exports default
+10-e chama-lo com tag dentro do template do arq 'App.vue'
+
+#06 - Dados nos componentes
+-Os componentes podem conter dados
+-podemos 'inicializar já com algum valor' e tambem modificar durante a execução do programa
+-os dados ficam em uma função chamada 'data'
+-esta função deve retornar os dados em 'formato de objeto'
+
+Etapas:
+1-Aplicar nos componentes criados, dentro dos script a função data()
+2-logo apos chama-las no template do arquivo em questão
+
+#07 - Lyfe cycle hooks (ganchos do ciclo de vida)
+-são eventos que podem ser ativados em determinadas partes da execução do programa;
+-Ex: created
+-Executa o codigo a partir do momento que o componente é criado
+-Estes gatilhos são interessantes para alterar a aplicação em diversas etapas diferentes
+
+hooks
+permite que os devs executem codigo em momentos especificos durante o ciclo de vida de um 'componente'.
+podendo ser: criado/montado/atualizado/destruido.

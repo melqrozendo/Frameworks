@@ -1,0 +1,145 @@
+#Aula 01 - Introdução ao ReactJS
+https://www.youtube.com/watch?v=9iKNxnFJY_Q&list=PLnDvRpP8BneyVA0SZ2okm-QBojomniQVO&index=3
+O que é? 
+-Biblioteca ou framework para desenvolvimento front-end ou interfaces
+-Utilizado para cosntruir SPAs (Single Page Application)
+-Baseado em componentes (funcoes js que retorna uma marcação)
+Obs: o react ser baseado em componentes tem relação a arquitetura do framework
+-Utiliza o JSX para renderizar HTML
+-E aplica o Virtual DOM para realizar as alterações de DOM
+-Podemos adicionar a um projeto ou criar um projeto com ele;
+
+#Aula 02 - Como instalar o React?
+-Para instalar o React vamos utilizar uma ferramenta chamada Create React App (é um script);
+-Recebemos todos os arquivos da biblioteca e temos como executá-la
+-Para utilizar precisamos do Node e tambem npm
+Obs: que o Create React App nao é um pacote, mas um script que utiliza o npx
+-Esta ferramenta tambem otimiza o app gerado para produção
+-É possível iniciar a aplicação com 'npm start'
+
+https://react.dev/learn/start-a-new-react-project
+
+#verificar denpendencias e libs instaladas:
+comandos:
+### node -v (verificar node instalado)
+### npm -v (verificar npm instalado)
+### cd Aula01 (pasta criada para o estudo de react)
+
+### npx create-react-app aula01 (comando de criar um script react na pasta <aula01>)
+### cd aula01 (nome_do_projeto)
+### npm start (comando de execução de um script, ou do servidor local do react)
+### ctrl+c (parar o servidor do react)
+
+Apos o comando, ele inicia no navegador o projeto React
+
+Obs: Analizando os arquivos o que aparece na pagina renderizada do navegador 
+é o que esta no arquivo App.js e o App.css é o arq de estilização.
+
+Os recursos do React são: 
+-JSX
+-Componentes
+
+#Aula 03 - Entendendo o JSX
+-O JSX é como um HTML, porem dentro do codigo js (podemos executar codigo js no HTML)
+-É a principal maneira de escrever html com o react é utilizando JSX
+-Podemos interpolar variaveis, inserindo ela entre {<variavel>} (podemos criar variaveis dinamicas)
+Obs: o codigo é interpretado!
+-É possivel tambem executar funcoes eem JSX
+-Inserir valores em atributos de tags (ou seja, criar tags html dinamicas)
+
+Obs: o principal arquivo do projeto react é o App.js pois é onde podemos fazer a configuração do JSX;
+Obs: no JSX devemos entregar apenas um elemento pai;
+Obs: ao declarar um atributo class a uma tag element, deve lembrar que deve ser className;
+
+#Aula 04 - Criando componentes (ou componentização)
+-Permite dividr a aplicação em partes
+-Os componentes renderizam JSX, assim com o App.js (App.js é um componentes)
+-Para criar uma pagina com react:
+1-precisamos criar um arquivo de componentes
+2-e importa-lo onde precisa de ser tratados
+
+Componentes:
+-permiti dividir a aplicação em partes 
+-os componentes renderizadam JSX, assim como App.js
+
+Etapas para criar componentes:
+1- na pasta src, ir para pasta componentes
+2- criar um componentes é criar uma funcao e importa-lo
+
+#Aula 05 - Props (propriedade)
+-As props são valores passados para componentes;
+-Podemos deixa-los dinamicos;
+-Ou seja, mudando a execucao por causa do valor da propriedade (a cada componente é adicionada uma prop diferente)
+-O valor é passado como um atributo na chamada do componente
+-E precisa ser resgatado dentro de uma propriedade/argumento chamanda props na função de definição do componente;
+-As props são somente de leitura.
+
+Obs: é possivel utilizar um recurso do react chamada Struct para nao precisar ficar repetindo o props. Ou seja, onde aloca-se os argumento na função devemos desestruturar e renomear as props.
+
+#Aula 06 - Inserindo CSS no React (CSS modules)
+-O CSS pode ser adicionado de forma global na aplicação, por meio do arquivo index.css por exemplo.
+-Porem é possivel estilizar a nível de componentes.
+-Utilizamos o CSS modules para isso.
+-Basta criar um arquivo como: Componente.module.css;
+-E chamar este CSS no componente;
+
+#Aula 07 - Fragmentos
+-Os React Fragmentos permite a criação de um componente sem elemento pai.
+-O propósito é descomplicar os nós do DOM.
+-A sintaxe é <> e </>, não há um nome para a tag
+-Criamos no próprio JSX
+
+Obs: podemos usar fragmente com reaprovetamento de componentes.
+
+#Aula 08 - Avançando em props
+-Podemos definir tipos para as props, realizando em especie de validação
+-Definimos em um objeto chamado propTypes no proprio componente
+-E ainda há a possibilidade de definir um valor padrão
+-Neste caso utilizamos o objeto defaultProps
+
+#Aula 09 - Eventos
+-Os eventos de React são os mesmos eventos do DOM
+-Ou seja, temos eventos para responder a um click
+-O eventpo é atrelado a uma tag que irá exemplo
+-Geralmente um método é atribuido ao evento.
+-Este método deve ser criado no componente; 
+
+Obs: deve-se criar um evento para realizar a submissao de um form no FrontEnd, via Ajax de modo assincrono.
+resolvemos definindo o evento da submissao (e)
+
+#Aula 10 - useState (recurso para manipulação de dados)
+-O useState é um 'hook' do react;
+-Com ele conseguimos manusear o estado de um componente de forma simples
+-Este hook funciona muito bem com eventos (ou seja, quando estive fazendo entrada de um dado, atraves do evento onchange pode fazer alteracoes do state de algum campo)
+-Podemos atrelar um evento a mudança de state.
+
+obs: para uso o hook devemos importa-lo.
+obs: o fato de usar hook é trabalhar com o react de uma maneira mais simples.
+
+#Aula11 - Métodos por props (ou seja, enviar funçoes por meio de propriedades a componentes filhos atraves de componentes pais)
+-os metodos tambem podem ser passados por props
+-ou seja, um componente filho pode ativar o metodo do seu ancestral
+-vamos acessar o metodo por meio de um evento
+-a sintaxe é a mesma de uma props de dados: props.meuEvento;
+
+#Aula12 - Renderização por condição (ou seja, exibir conteudo baseado na condição)
+-Podemos atrelar a exibiçao de algum elemento a um interfaces
+-Esta ação é chamada de renerização condicional
+-Envolvemos as tags em chaves {}
+-Como as chaves executam JavaScript, criamos nossa condição
+-É possível usar o state para criar as condições
+
+#Aula13 - Renderização de listas (Arrays)
+-Para renderizar uma lista vamos primeiramente precisar de um Arrays
+-Depois utilizamos a funçao map, para percorrer cada um dos itens
+-Podendo assim renderizar algo na tela
+-É possivel unir operadores condicionais com a renderização de listas;
+
+#Aula14 - State Lift
+-State Lift é uma tecnica utilizada para compartilhar o state
+-É normal varios componentes dependerem do mesmo estado
+-Então precisamos elevar o nivel do mesmo a um componente pai
+-Então centralizamos o state no pai, e definimos quem usa e quem define (setState)
+
+#Aula15
+#Aula16 - React Icons

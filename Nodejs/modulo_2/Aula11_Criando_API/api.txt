@@ -1,0 +1,65 @@
+Criando uma API em Nodejs
+https://www.youtube.com/watch?v=WejbsEnvvRQ
+(Application Programming Interface)
+É um conjunto de rotinas e padroes que sao estabelecidos por um software.
+Fluxo:
+-realizamos uma requisição a API
+-e ela devolve uma resposta
+
+Assim o Front-end 
+(responsavel pela parte visual da aplicação)
+-recebe os dados e processa
+-a resposta vem em uma estrutura de dados 
+Tipo de padrao de estrutura de dados:
+XML
+JSON
+Apos receber os dados, podemos exibir para o usuario.
+
+Exemplos de APIs
+-Autenticação de usuario
+-Organização financeira
+
+******************************
+1-Ao criar a pasta do projeto
+
+2-instalar o pacote pelo terminal
+### npm init
+
+3-instalar bibliotecas (yarn)
+https://yarnpkg.com/cli/install 
+### npm install -g yarn
+
+4-instalar framework express 
+-sistema de rotinas
+-tratamento de excessoes na aplicação
+-gerenciar diferentes tipos de requisiçoes http
+### yarn add express
+-uma pasta node_modules é criada
+
+5-criar um index.js para criar nossa API
+-chamar a dependencia express
+-definir uma variavel que receba a os metodos do express
+-subir um servidor na porta 3000
+-definir uma rota com metodo get para retornar uma mensagem do tipo JSON
+
+*******
+obs:
+localhost: o nosso PC vai funcionar como se fosse um servidor virtual
+3000: é a porta que o nosso servidor está escutando
+/<rotas>: tudo que fica depois da barra, vai ser as nossas rotas
+*******
+
+Para melhorar a produtividade installar:
+nodemon
+### yarn global add nodemon
+
+*******
+
+6-buscando um arq.json de filmes
+-copiar os dados de filmes criados
+-criar uma pasta src
+-criar uma pasta data
+-criar um arq <filmes.json>
+
+7-importar o arq <filmes.json> no arq <index.js>
+require('<caminho do arquivo>')
